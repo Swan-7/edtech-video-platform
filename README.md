@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
+# EdTech Video Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple EdTech platform where learners can watch videos, add their own YouTube links, and manage a list of learning resources.  
+Built with **React + Vite + TailwindCSS**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Watch YouTube videos directly on the page  
+- Add new videos (Name, Description, YouTube URL)  
+- Select a video to play in the main player  
+- Delete videos from the list  
+- Profile avatar placeholder for future login 
+- Persistent storage (save videos even after refresh) 
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
+- [React](https://react.dev/) (with Vite)  
+- [TailwindCSS](https://tailwindcss.com/)  
+- [Lucide Icons](https://lucide.dev/)  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Setup & Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository
+```
+git clone https://github.com/Swan-7/edtech-video-platform.git
+
+cd edtech-video-platform
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm install
+```
+
+3. Run the development server
+
+```
+npm run dev
+```
+
+The app will be available at:
+[http://localhost:5173]
+
+---
+
+## How It Works
+
+1. On load, the video player prompts the user to select a video.
+2. Add a new video using the form (Name, Description, YouTube URL).
+3. The video appears in the list with **Watch** and **Delete** buttons.
+4. Clicking **Watch** loads the video in the player.
+5. Clicking **Delete** removes the video from the list.
+
+---
+
+## Project Structure
+
+```
+src/
+ ├── components/
+ │    ├── VideoPlayer.jsx
+ │    ├── VideoForm.jsx
+ │    └── VideoList.jsx
+ ├── App.jsx
+ ├── main.jsx
+ └── index.css
+```
+
+---
+
+## Future Improvements
+
+* User authentication & profiles
+* AI-powered video recommendations
+
+---
+
+## Author
+
+Built for an AI powered EdTech by **Benita Daniel**
+
